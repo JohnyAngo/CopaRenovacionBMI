@@ -1,0 +1,38 @@
+[
+    {
+        "firstName": "Johny",
+        "lastName": "Ango",
+        "username": "jango",
+        "hash": "$2a$10$owTNrm4lIFRaBMJQL.fr/ubf3XhTbOL1k5PL4jJbZE4MoV7pHtrqe",
+        "id": 1,
+        "dateCreated": "2023-02-25T13:16:50.029Z",
+        "dateUpdated": "2023-02-25T13:16:50.029Z"
+    },
+    {
+        "firstName": "Broker",
+        "lastName": "uno",
+        "username": "brokeruno",
+        "hash": "$2a$10$5JDWOV5lcvXRqgPxohnua.yvOQ5j46x6L8UinpXLHT.etWEGvHqki",
+        "id": 2,
+        "dateCreated": "2023-02-25T19:51:38.579Z",
+        "dateUpdated": "2023-02-25T19:51:38.580Z"
+    },
+    {
+        "firstName": "Broker",
+        "lastName": "dos",
+        "username": "brokerdos",
+        "hash": "$2a$10$oRNcEdDFVC2J50YgkVL0yOxedFlaf1CqyKuk6TCgz368CiDU7cYo2",
+        "id": 3,
+        "dateCreated": "2023-02-25T19:51:54.360Z",
+        "dateUpdated": "2023-02-25T19:51:54.360Z"
+    },
+    {
+        "firstName": "Broker",
+        "lastName": "tres",
+        "username": "brokertres",
+        "hash": "$2a$10$6smJN/XeKQMiYmws9ldi1OzLNqV5B5GKbK7vnMY6C3qfpIEV6QEu2",
+        "id": 4,
+        "dateCreated": "2023-02-25T20:08:53.220Z",
+        "dateUpdated": "2023-02-25T20:08:53.220Z"
+    }
+]
