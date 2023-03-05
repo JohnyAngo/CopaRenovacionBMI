@@ -21,6 +21,7 @@
     "eslint-config-next": "13.1.6",
     "express-jwt": "^8.4.1",
     "next": "13.1.6",
+    "pg": "^8.9.0",
     "react": "18.2.0",
     "react-data-table-component": "^7.5.3",
     "react-dom": "18.2.0",
@@ -29,5 +30,8 @@
     "rxjs": "^7.8.0",
     "styled-components": "^5.3.8",
     "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.6.6"
   }
 }
