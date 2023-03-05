@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import Head from "next/head";
 import Sidebars from './Sidebars'
 import styles from '/styles/Layout.module.css'
