@@ -5,13 +5,21 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { HiUsers } from "react-icons/hi";
 import styles from '../styles/Sidebar.module.css';
 import NavbarTop from './NavbarTop';
-import Link from 'next/link'
+import Link from 'next/link';
+import { logout } from "../auth";
+import Router from 'next/router';
+import { Image } from "@nextui-org/react";
 
 export default function Sidebars({navTitle, navSubTitle, ruta, children}) {
     const { collapseSidebar } = useProSidebar();
     const { toggleSidebar } = useProSidebar();
     const [iscollapse, setIsCollapse] = useState(true);
     const [toggled, setToggled] = useState(false);
+
+    const exit = async () => {
+        await logout();
+        Router.push('/');
+    }
 
     const toggle = () => {
         setToggled(!toggled);
@@ -30,6 +38,7 @@ export default function Sidebars({navTitle, navSubTitle, ruta, children}) {
 
     const resumen = ruta === 'resumen' ? `${styles.menuItem} ${styles.active}` : `${styles.menuItem}`
     const instructions = ruta === 'instructions' ? `${styles.menuItem} ${styles.active}` : `${styles.menuItem}`
+    const playersBase = ruta === 'playersBase' ? `${styles.menuItem} ${styles.active}` : `${styles.menuItem}`
     const team = ruta === 'team' ? `${styles.menuItem} ${styles.active}` : `${styles.menuItem}`
     const specials = ruta === 'specials' ? `${styles.menuItem} ${styles.active}` : `${styles.menuItem}`
     const terms = ruta === 'terms' ? `${styles.menuItem} ${styles.active}` : `${styles.menuItem}`
@@ -42,11 +51,19 @@ export default function Sidebars({navTitle, navSubTitle, ruta, children}) {
                 transitionDuration={1000}
                 breakPoint="md"
                 className={styles.contentSidebar}
-                backgroundColor="#120639"
+                backgroundColor="#111419"
                 ligth
             >
                 <Menu>
                     <div>
+                        <Image
+                            src="https://www.bmicos.com/ecuador/wp-content/uploads/sites/9/2020/12/logo-1.png"
+                            fill
+                            alt="BMI"
+                            sizes="(max-width: 768px) 100vw,
+                                (max-width: 1200px) 50vw,
+                                33vw"
+                        />
                         <MenuItem
                             icon={<BsFillGrid1X2Fill />}
                             component={<Link href="/resumen" />}
@@ -64,12 +81,20 @@ export default function Sidebars({navTitle, navSubTitle, ruta, children}) {
                             Instrucciones
                         </MenuItem>
                         <MenuItem
+                            icon={<BsFillFileTextFill />}
+                            component={<Link href="/base-de-jugadores" />}
+                            className={playersBase}
+                        >
+                            <div className={styles.activeBookmark}/>
+                            Base de jugadores
+                        </MenuItem>
+                        <MenuItem
                             icon={<HiUsers />}
                             component={<Link href="/mi-equipo" />}
                             className={team}
                         >
                             <div className={styles.activeBookmark}/>
-                            Mi equipo
+                            Agentes <br/> renovadores
                         </MenuItem>
                         <hr/>
                         <MenuItem
@@ -89,18 +114,25 @@ export default function Sidebars({navTitle, navSubTitle, ruta, children}) {
                             Términos y <br/>
                             condiciones
                         </MenuItem>
+                        <MenuItem
+                            icon={<HiUsers />}
+                            component={<Link href="/usuarios" />}
+                            className={terms}
+                        >
+                            <div className={styles.activeBookmark}/>
+                            Usuarios
+                        </MenuItem>
                     </div>
                     <MenuItem
                         icon={<HiUsers />}
-                        component={<Link href={"/"} />}
                         className={styles.menuItem}
+                        onClick={() => exit()}
                     >
                         Cerrar sesión
                     </MenuItem>
                 </Menu>
                 <a className={classCollapse}
-                   // eslint-disable-next-line react/no-unknown-property
-                   hideIn="md"
+                   hidein="md"
                    onClick={() => collapse()}
                 >
                     {iscollapse ?

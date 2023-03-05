@@ -1,0 +1,31 @@
+.home {
+    background: #111419;
+    height: 100vh;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    margin: 0 5%;
+}
+.login, .register {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 6px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 11px;
+    transition: 0.5s;
+}
+.login:hover, .register:hover {
+    background: white;
+    color: #000000;
+    transition: 0.5s;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
